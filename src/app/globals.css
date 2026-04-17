@@ -11,32 +11,32 @@
 @theme inline {
   --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
-  /* --- カラー (AIが業種に合わせて書き換える) --- */
-  --color-background: oklch(0.99 0 0);
-  --color-foreground: oklch(0.13 0 0);
-  --color-muted: oklch(0.96 0 0);
-  --color-muted-foreground: oklch(0.45 0 0);
-  --color-border: oklch(0.91 0 0);
-  --color-ring: oklch(0.55 0.15 250);
+  /* --- カラー --- */
+  --color-background: #0A0A0A;
+  --color-foreground: #FAFAFA;
+  --color-muted: #171717;
+  --color-muted-foreground: #A3A3A3;
+  --color-border: #262626;
+  --color-ring: #00F0FF;
 
-  /* アクセントカラー (デフォルト: ブルー系) */
-  --color-primary: oklch(0.55 0.15 250);
-  --color-primary-foreground: oklch(0.99 0 0);
-  --color-secondary: oklch(0.95 0.01 250);
-  --color-secondary-foreground: oklch(0.25 0.05 250);
+  /* アクセントカラー */
+  --color-primary: #00F0FF;
+  --color-primary-foreground: #0A0A0A;
+  --color-secondary: #171717;
+  --color-secondary-foreground: #FAFAFA;
 
-  --color-accent: oklch(0.95 0.01 250);
-  --color-accent-foreground: oklch(0.25 0.05 250);
+  --color-accent: #FF007F;
+  --color-accent-foreground: #FAFAFA;
 
-  --color-destructive: oklch(0.55 0.2 25);
-  --color-destructive-foreground: oklch(0.99 0 0);
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FAFAFA;
 
-  --color-card: oklch(0.99 0 0);
-  --color-card-foreground: oklch(0.13 0 0);
-  --color-popover: oklch(0.99 0 0);
-  --color-popover-foreground: oklch(0.13 0 0);
+  --color-card: #171717;
+  --color-card-foreground: #FAFAFA;
+  --color-popover: #171717;
+  --color-popover-foreground: #FAFAFA;
 
-  --color-input: oklch(0.91 0 0);
+  --color-input: #262626;
 
   /* --- 半径 --- */
   --radius-sm: 8px;

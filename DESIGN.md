@@ -1,4 +1,4 @@
-# DESIGN.md — {{サービス名}}
+# DESIGN.md — とーくる
 
 > このファイルはAIエージェントが日本語UIを生成するためのデザイン仕様書です。
 > ヒアリングデータを元にAIが自動生成します。手動編集も可能です。
@@ -7,9 +7,9 @@
 
 ## 1. Visual Theme & Atmosphere
 
-- **デザイン方針**: {{AIが業種から判断}}
-- **密度**: {{ゆったり / 標準 / 情報密度高め}}
-- **キーワード**: {{3〜5つの形容詞}}
+- **デザイン方針**: ダークモダン、先進的、ネオンアクセント
+- **密度**: ゆったり（長文を避け、カード型で簡潔に）
+- **キーワード**: 先進的、スタイリッシュ、ミニマル、インパクト
 
 ---
 
@@ -17,8 +17,8 @@
 
 ### Primary（ブランドカラー）
 
-- **Primary** (`#______`): メインのブランドカラー。CTAボタン、リンク等に使用
-- **Primary Dark** (`#______`): ホバー・プレス時
+- **Primary** (`#00F0FF`): メインのブランドカラー（ネオンシアン）。CTAボタン、リンク等に使用
+- **Primary Dark** (`#00C2CC`): ホバー・プレス時
 
 ### Semantic
 
@@ -28,11 +28,11 @@
 
 ### Neutral
 
-- **Text Primary** (`#171717`): 本文テキスト
-- **Text Secondary** (`#737373`): 補足テキスト
-- **Border** (`#E5E5E5`): 区切り線、入力欄の枠
-- **Background** (`#FAFAFA`): ページ背景
-- **Surface** (`#FFFFFF`): カード、モーダル等の面
+- **Text Primary** (`#FAFAFA`): 本文テキスト
+- **Text Secondary** (`#A3A3A3`): 補足テキスト
+- **Border** (`#262626`): 区切り線、入力欄の枠
+- **Background** (`#0A0A0A`): ページ背景
+- **Surface** (`#171717`): カード、モーダル等の面
 
 ---
 
@@ -94,34 +94,37 @@ font-feature-settings: "palt" 1, "kern" 1;
 ### Buttons
 
 **Primary**
-- Background: Primary カラー
-- Text: #FFFFFF
+- Background: Primary カラー (`#00F0FF`)
+- Text: `#0A0A0A`
 - Padding: 12px 24px
 - Border Radius: 10px
 - Font Size: 16px / Weight: 600
+- Shadow: 0 0 15px rgba(0, 240, 255, 0.4)
 
 **Secondary**
 - Background: transparent
-- Text: Primary カラー
-- Border: 1px solid Primary
+- Text: Primary カラー (`#00F0FF`)
+- Border: 1px solid Primary (`#00F0FF`)
 - Padding: 12px 24px
 - Border Radius: 10px
 
 ### Inputs
 
-- Border: 1px solid #E5E5E5
-- Border (focus): 1px solid Primary
+- Background: `#171717`
+- Border: 1px solid `#262626`
+- Border (focus): 1px solid Primary (`#00F0FF`)
 - Border Radius: 10px
 - Padding: 12px 16px
 - Height: 44px
+- Text: `#FAFAFA`
 
 ### Cards
 
-- Background: #FFFFFF
-- Border: 1px solid #E5E5E5
+- Background: `#171717`
+- Border: 1px solid `#262626`
 - Border Radius: 12px
 - Padding: 24px
-- Shadow: 0 1px 2px rgba(0,0,0,0.05)
+- Shadow: 0 4px 20px rgba(0, 0, 0, 0.5)
 
 ---
 
@@ -150,9 +153,9 @@ font-feature-settings: "palt" 1, "kern" 1;
 | Level | Shadow | 用途 |
 |-------|--------|------|
 | 0 | none | フラット |
-| 1 | 0 1px 2px rgba(0,0,0,0.05) | カード |
-| 2 | 0 4px 8px rgba(0,0,0,0.08) | ドロップダウン |
-| 3 | 0 8px 24px rgba(0,0,0,0.12) | モーダル |
+| 1 | 0 4px 20px rgba(0, 0, 0, 0.5) | カード |
+| 2 | 0 8px 30px rgba(0, 0, 0, 0.7) | ドロップダウン |
+| 3 | 0 0 20px rgba(0, 240, 255, 0.2) | ネオンアクセント（モーダル等） |
 
 ---
 
@@ -165,11 +168,12 @@ font-feature-settings: "palt" 1, "kern" 1;
 - コントラスト比 WCAG AA 以上を確保
 - 余白は Spacing Scale に従う
 - セクションごとにレイアウトに変化をつける
+- ダークテーマに合わせたネオンカラーのアクセントを効果的に使う
 
 ### Don't
 
-- グラデーション背景の多用
-- 装飾的なSVGパターン
+- 明るすぎる背景色の使用
+- 装飾的なSVGパターンの多用
 - 全セクション同じレイアウトの繰り返し
 - 不自然に大きなpadding
 - 過剰なアニメーション
