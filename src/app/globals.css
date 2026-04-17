@@ -2,14 +2,15 @@
 
 /*
  * Design System: DESIGN.md 準拠
- * タイポ: System UI + Inter
- * カラー: ニュートラル + アクセント (カスタマイズ前提)
+ * タイポ: System UI + Inter + Noto Sans JP
+ * カラー: ニュートラル + アクセント (Cyan, Pink, Indigo)
  * 半径: 12/10/8px
  * 余白: 8の倍数
  */
 
 @theme inline {
-  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  /* --- タイポグラフィ --- */
+  --font-sans: "Inter", "Noto Sans JP", "Yu Gothic", ui-sans-serif, system-ui, -apple-system, sans-serif;
 
   /* --- カラー --- */
   --color-background: #0A0A0A;
@@ -19,29 +20,42 @@
   --color-border: #262626;
   --color-ring: #00F0FF;
 
-  /* アクセントカラー */
+  /* Primary (Neon Cyan) */
   --color-primary: #00F0FF;
   --color-primary-foreground: #0A0A0A;
+  
+  /* Secondary / Surface */
   --color-secondary: #171717;
   --color-secondary-foreground: #FAFAFA;
 
+  /* Accents (Neon Pink & Indigo) */
   --color-accent: #FF007F;
   --color-accent-foreground: #FAFAFA;
+  --color-indigo: #4F46E5;
 
+  /* Semantic */
   --color-destructive: #EF4444;
   --color-destructive-foreground: #FAFAFA;
+  --color-warning: #F59E0B;
+  --color-success: #10B981;
 
+  /* UI Elements */
   --color-card: #171717;
   --color-card-foreground: #FAFAFA;
   --color-popover: #171717;
   --color-popover-foreground: #FAFAFA;
-
   --color-input: #262626;
 
   /* --- 半径 --- */
   --radius-sm: 8px;
   --radius-md: 10px;
   --radius-lg: 12px;
+
+  /* --- シャドウ (Depth & Elevation) --- */
+  --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-dropdown: 0 8px 30px rgba(0, 0, 0, 0.7);
+  --shadow-neon: 0 0 20px rgba(0, 240, 255, 0.3);
+  --shadow-neon-pink: 0 0 20px rgba(255, 0, 127, 0.3);
 }
 
 @layer base {
@@ -52,5 +66,16 @@
   body {
     @apply bg-background text-foreground antialiased;
     font-feature-settings: "rlig" 1, "calt" 1;
+    word-break: break-all;
+    overflow-wrap: break-word;
+    line-break: strict;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
+  }
+
+  /* 見出しのプロフェッショナルなカーニング調整 */
+  h1, h2, h3, h4, h5, h6 {
+    font-feature-settings: "palt" 1, "kern" 1;
+    letter-spacing: -0.01em;
   }
 }
